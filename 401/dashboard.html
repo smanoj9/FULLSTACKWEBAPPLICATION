@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Kurale', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 70px;
+            background-color: #6c99ed;
+        }
+
+        .nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        .nav ul li {
+            cursor: pointer;
+        }
+
+        .nav ul button,
+        .order-btn {
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 255, 0.691);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav ul button:hover {
+            background-color: blue;
+        }
+
+        .search {
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .search input {
+            padding: 10px 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px 0 0 5px;
+            margin-right: 0;
+            background-color: transparent;
+        }
+
+        .search button,
+        .explore-btn {
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            border: none;
+            outline: none;
+            background-color: rgba(0, 128, 0, 0.805);
+            cursor: pointer;
+            color: white;
+        }
+
+        .explore-btn {
+            border-radius: 5px;
+        }
+
+        .order-btn {
+            border-radius: 5px;
+        }
+
+        .search button:hover {
+            background-color: rgba(0, 128, 0, 0.99);
+        }
+
+        #nav {
+            padding: 10px 70px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #efeeef;
+        }
+
+        #nav select {
+            border: none;
+            background-color: transparent;
+        }
+
+        #Home {
+            background-image: url(https://animaltalk.co.za/wp-content/uploads/2021/05/jametlene-reskp-fliwkBbS7oM-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .overlay {
+            position: relative;
+            z-index: 0;
+        }
+
+        .overlay::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(38, 44, 38, 0.6);
+        }
+
+        #Collections img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .shadow {
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+            border-radius: 7px;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="position: fixed; width: 100%; z-index: 100;">
+        <nav class="nav">
+            <h1>PetsOnline</h1>
+            <div class="search">
+                <input type="text" />
+                <button>SEARCH</button>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#Home">HOME</a></li>
+                    <li><a href="#About">ABOUT</a></li>
+                    <li><a href="#Collections">COLLECTION</a></li>
+                    <li><button>LOGOUT</button></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="nav">
+            <div style="display: flex;align-items: center; gap: 10px;">
+                <h1>Dogs</h1>
+                <select>
+                    <option></option>
+                    <option>Golden Retriever</option>
+                    <option>German Shepherd</option>
+                    <option>Labrador</option>
+                    <option>Rottweiler</option>
+                    <option>Beagle</option>
+                </select>
+            </div>
+            <div style="display: flex;align-items: center; gap: 10px;">
+                <h1>Cats</h1>
+                <select>
+                    <option></option>
+                    <option>Siamese Cat</option>
+                    <option>British Shorthair</option>
+                    <option>Maine coon</option>
+                    <option>Persian Cat</option>
+                    <option>Birman</option>
+                </select>
+            </div>
+            <div style="display: flex;align-items: center; gap: 10px;">
+                <h1>Fishes</h1>
+                <select>
+                    <option></option>
+                    <option>Common Goldfish</option>
+                    <option>Oranda</option>
+                    <option>Comet</option>
+                    <option>Fantail</option>
+                </select>
+            </div>
+        </nav>
+    </div>
+
+    <section id="Home" class="overlay">
+        <div style="z-index: 100;">
+            <h1>Order Here... </h1>
+            <h1>Collect it from our Nearby store...</h1>
+            <div>
+                <button class="explore-btn"> Explore</button>
+                <button class="order-btn"> Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="About" style="padding: 80px 80px; text-align: center;">
+        <h1>About Us</h1>
+        <p style="font-size: 18px; text-align: left;">PetsOnline <br><br> PetsOnline was produced in view of the petted
+            darling. <br><br>We see pets as individuals from the family, so our point is to give clients items and
+            administrations that can guarantee their darling pet will appreciate an upbeat,solid <br> <br>We know how
+            essential the human-creature bond is, so our promise of quality creature care reaches out to each aspect of
+            our.<br><br> Have you at any point met an enthusiastic creature,sweetheart?An obstinate, fringe-fixated pet
+            proprietor? All things considered,permit us the joy of acquainting you with our client benifit office.
+            <br><br>Every one of our clients blosters staff individuals who have more than 10 years of involvement in
+            their related pet field. <br><br>
+        </p>
+    </section>
+
+    <section id="Collections">
+        <h1 style="text-align: center; margin-top: 80px; margin-bottom: 80px;">Our Collection</h1>
+
+        <div style="display: flex; justify-content: space-evenly;">
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z29sZGVuJTIwcmV0cmlldmVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+                    style="border-radius: 7px;">
+                <h2>Golden Retriever</h2>
+                <p>The <b>Golden Retriver</b> is a scottish breed of retriver dog of medium size. It is characterized by a gentle and affectionate nature and a striking golden dog</p>
+                <h3>2,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://cdn.pixabay.com/photo/2016/02/06/15/37/cat-1183086_1280.jpg" style="border-radius: 7px;">
+                <h2>Siamese Cat</h2>
+                <p>The <b>Siamese cat</b>is one of the first distinctly recognized breeds of cat of Asian cat.Usually it is the most prefereble pet.
+                </p>
+                <h3>3,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://c4.wallpaperflare.com/wallpaper/531/664/27/cat-look-portrait-handsome-wallpaper-preview.jpg" style="border-radius: 7px;">
+                <h2>British Shorthair</h2>
+                <p>The <b>British Shorthair</b> is the pedigreed version of the traditional British domestic cat,with a distinctively stocky body,thick coat and broad face</p>
+                <h3>2,499/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-evenly; margin-top: 40px;">
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://images.unsplash.com/photo-1601275283500-ebbe72dc328e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdlcm1hbiUyMHNoZXBoZXJkJTIwZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" style="border-radius: 7px;">
+                <h2>German Shepard</h2>
+                <p>The German Shepherd[a], also known in Britain as an Alsatian, is a German breed of working dog of medium to large size. The breed was developed by Max von Stephanitz using various traditional German herding dogs from 1899.</p>
+                <h3>3,499/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://c0.wallpaperflare.com/preview/541/933/75/pet-cat-animal-mammal.jpg" style="border-radius: 7px;">
+                <h2>Maine Coon</h2>
+                <p>The Maine Coon is a large and social cat, which could be the reason why it has a reputation of being referred to as "the gentle giant." The Maine Coon is predominantly known for its size and dense coat of fur which helps the large feline to survive in the harsh climate of Maine.</p>
+                <h3>7,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://images.unsplash.com/photo-1591429939960-b7d5add10b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc2lhbiUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" style="border-radius: 7px;">
+                <h2>Persian Cat</h2>
+                <p>The Persian cat, also known as the Persian longhair, is a long-haired breed of cat characterized by a round face and short muzzle
+
+                </p><br><br>
+                <h3>4,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-evenly; margin-top: 40px;">
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://images.pexels.com/photos/3039080/pexels-photo-3039080.jpeg?auto=compress&cs=tinysrgb&w=800" style="border-radius: 7px;">
+                <h2>Labrador Retriever</h2>
+                <p>The Labrador Retriever, or simply Labrador, is a British breed of retriever gun dog. It was developed in the United Kingdom from fishing dogs imported from the colony of Newfoundland, and was named after the Labrador region of that colony.</p>
+                <h3>3,499/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://c4.wallpaperflare.com/wallpaper/707/238/347/dog-animals-rottweiler-puppies-wallpaper-preview.jpg" style="border-radius: 7px;">
+                <h2>Rottweiler</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nam corporis voluptatum optio rerum
+                    eaque.</p><br><br>
+                <h3>17,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+            <div style="padding: 10px; width: 25%;" class="shadow">
+                <img src="https://c4.wallpaperflare.com/wallpaper/584/495/583/dogs-beagle-dog-pet-hd-wallpaper-preview.jpg" style="border-radius: 7px;">
+                <h2>Beagle</h2>
+                <p>The beagle is a breed of small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare, known as beagling.</p>
+                <h3>7,999/-</h3>
+                <button class="explore-btn">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 80px; padding: 10px 40px; background-color: #6c99ed;">
+        <h1>©CopyRight by PetsOnline</h1>
+    </footer>
+</body>
+
+</html>
